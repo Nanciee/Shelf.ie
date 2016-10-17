@@ -1,4 +1,4 @@
-angular.module('store-front', ['store-front.manage', 'ngRoute'])
+angular.module('store-front', ['store-front.manage', 'store-front.services', 'ngRoute'])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
     .when('/', {
