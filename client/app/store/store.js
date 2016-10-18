@@ -7,7 +7,8 @@ store.controller('storeController', function ($scope, requests, $location) {
   parser.href = $location.absUrl();
   var url = parser.pathname
   requests.getInfo(url).then(function(info){
-    console.log(info)
-    $scope.data = info
+    console.log(info[1])
+    $scope.data = info[0]
+    $scope.info = info[1]
   });
 });

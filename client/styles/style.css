@@ -1,0 +1,86 @@
+body {
+  font-family: sans-serif;
+  color: #5C6272;
+}
+
+.container {
+  background-color: white;
+  width: 400px;
+  height: 430px;
+  border-radius: 7px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -250px 0 0 -200px;
+}
+
+#signin, #signup, .manage{
+  position: relative;
+  left:40px;
+}
+
+h1 {
+  color: #CFD2CD;
+  letter-spacing: 1px;
+  position: relative;
+  left: 30px;
+  font-weight: 200;
+  font-size: 50px;
+}
+
+h2 {
+  font-weight: 200;
+}
+
+span {
+  color: #A6A2A2
+}
+
+input{
+  width: 300px;
+  height: 30px;
+  font-size: 18px;
+  color: #5C6272;
+  outline-color: #FFEAD3;
+  margin-bottom: -1px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #E5E6E4;
+  font-family: sans-serif;
+  font-weight: 200;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #E5E6E4;
+  font-family: sans-serif;
+  font-weight: 200;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #E5E6E4;
+  font-family: sans-serif;
+  font-weight: 200;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #E5E6E4;
+  font-family: sans-serif;
+  font-weight: 200;
+}
+
+
+button{
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 305px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #E7B9AA;
+  color: #FBFBF2;
+  border: none;
+}
+
+a {
+  color: #753D3E;
+}
+
+
+

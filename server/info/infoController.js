@@ -35,7 +35,6 @@ module.exports = {
       if(!info){
         return res.send(404)
       }
-      console.log(info)
       var params = {
         itemFilter: [
           {name: 'Seller', value: info.amazonUser}
@@ -53,7 +52,7 @@ module.exports = {
 
       }, function(error, items){
         var result = items.searchResult.item
-        res.send(result)
+        res.send([result, info])
       })
     });
   }
