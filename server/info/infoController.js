@@ -15,23 +15,7 @@ module.exports = {
       url: req.body.url,
       amazonUser: req.body.amazonUser
     }
-
-    // var params = {
-    //   userID:
-    // };
-    // ebay.xmlRequest({
-    //   serviceName: 'Shopping',
-    //   opType: 'GetUserProfile',
-    //   appId: secret.app,
-    //   devId: secret.dev,
-    //   certId: secret.cert,
-    //   params: params,
-    //   parser: ebay.parseResponseJson
-
-    // }, function(error, items){
-    //   console.log(JSON.stringify(items)
-    //   return createInfo(newInfo)
-    // })
+    return createInfo(newInfo);
   },
 
   checkInfo: function(req, res, next){
@@ -45,18 +29,22 @@ module.exports = {
   },
 
   getInfo: function(req, res, next){
+
     findInfo({url: req.params.url})
     .then(function(info){
       if(!info){
         return res.send(404)
       }
+      console.log(info)
       var params = {
-        storeName: 'shoptresor'//info.amazonUser
+        itemFilter: [
+          {name: 'Seller', value: info.amazonUser}
+        ]
       };
 
       ebay.xmlRequest({
         serviceName: 'Finding',
-        opType: 'findItemsIneBayStores',
+        opType: 'findItemsAdvanced',
         appId: secret.app,
         devId: secret.dev,
         certId: secret.cert,

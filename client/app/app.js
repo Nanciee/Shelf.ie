@@ -1,9 +1,10 @@
 angular.module('store-front', ['store-front.manage', 'store-front.store', 'store-front.services', 'store-front.auth', 'ngRoute'])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
-    .when('/', {
+    .when('/manage', {
       templateUrl: 'app/manage/manage.html',
-      controller: 'ManageController'
+      controller: 'ManageController',
+      authenticate: true
     })
     .when('/signin', {
       templateUrl: 'app/Auth/signin.html',
@@ -14,7 +15,7 @@ angular.module('store-front', ['store-front.manage', 'store-front.store', 'store
       controller: 'AuthController'
     })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/manage'
     });
 
   $httpProvider.interceptors.push('AttachTokens');
