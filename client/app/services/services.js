@@ -1,10 +1,10 @@
 angular.module('store-front.services', [])
 .factory('requests', function ($http) {
 
-  var getInfo = function(){
+  var getInfo = function(url){
     return $http({
       method: 'GET',
-      url: ''
+      url: 'api' + url
     })
     .then(function(resp){
       return resp.data;
