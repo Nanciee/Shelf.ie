@@ -82,5 +82,37 @@ a {
   color: #753D3E;
 }
 
+.main {
+  position: absolute;
+  width: 720px;
+  background-color: white;
+  left: 50%;
+  margin-left: -360px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-radius: 3px;
+  padding-left: 20px;
+  padding-right: 10px;
+}
 
+.item {
+  position: relative;
+  width: 170px;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+h4 {
+  color: #CFD2CD;
+  letter-spacing: 1px;
+  position: relative;
+  font-weight: 200;
+  font-size: 50px;
+}
+
+.title {
+  font-size: 12px;
+  text-decoration: none;
+}
 

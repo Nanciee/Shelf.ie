@@ -2,10 +2,11 @@
 <html ng-app='store-front'>
   <head>
     <meta charset="utf-8" />
-    <title>{{ info.brand }}</title>
+    <title>Shelf.ie</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
 
   </head>
-  <body ng-controller='storeController'>
+  <body ng-controller='storeController' background="asset/cork-wallet.png">
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
 
@@ -15,11 +16,15 @@
     <script src="app/services/services.js"></script>
     <script src="app/Auth/auth.js"></script>
 
-    <h1>{{ info.brand }}</h1>
+    <div class='main'>
+      <h4>{{ info.brand }}</h4>
 
-    <div ng-repeat='item in data' class='{{ item.itemId }}' ng-click=''>
-      <img src='{{ item.galleryURL }}'/>
-      <p>{{ item.title }}</p>
+      <div class='items'>
+        <div ng-repeat='item in data' id='{{ item.itemId }}' class='item' ng-click=''>
+          <img src='{{ item.galleryURL }}'/>
+          <a href="{{ item.viewItemURL }}" class='title'><br/>{{item.title}}</a>
+        </div>
+      </div>
     </div>
 
   </body>
