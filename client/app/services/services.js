@@ -14,7 +14,7 @@ angular.module('store-front.services', [])
   var addInfo = function(info){
     return $http({
       method: 'POST',
-      url: '',
+      url: 'api/user/info',
       data: info
     })
     .then(function(resp){
