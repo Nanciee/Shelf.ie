@@ -13,11 +13,13 @@
     <script src="app/manage/manage.js"></script>
     <script src="app/store/store.js"></script>
     <script src="app/services/services.js"></script>
+    <script src="app/Auth/auth.js"></script>
 
     <h1>Store</h1>
 
-    <div>
-      <p>{{ data.username }}</p>
+    <div ng-repeat='item in data'>
+      <img src='{{ item.galleryURL }}'/>
+      <p>{{ item.title }}</p>
     </div>
 
   </body>
