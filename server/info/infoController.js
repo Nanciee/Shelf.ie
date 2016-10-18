@@ -14,5 +14,15 @@ module.exports = {
       amazonUser: req.body.amazonUser
     }
     return createInfo(newInfo)
+  },
+
+  checkInfo: function(req, res, next){
+    findInfo({url: req.params.url})
+    .then(function(info){
+      if(!info){
+        return next();
+      }
+      res.sendFile('store.html', {root: './client/app/store'});
+    })
   }
 }
