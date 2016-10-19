@@ -4,6 +4,7 @@ var store = angular.module('store-front.store', []);
 
 store.controller('storeController', function ($scope, requests, $location) {
   $scope.data = {}
+  $scope.loading = true;
   parser.href = $location.absUrl();
   var url = parser.pathname
   requests.getInfo(url).then(function(info){
@@ -13,6 +14,7 @@ store.controller('storeController', function ($scope, requests, $location) {
         info[0][index].title = item.title.slice(0, 22) + "...";
       }
     })
+    $scope.loading = false;
     $scope.data = info[0]
     $scope.info = info[1]
   });
