@@ -8,8 +8,11 @@ manage.controller('ManageController', function ($scope, requests, $window, Auth)
       url: $scope.url,
       amazonUser: $scope.amazonUser
     }
-    console.log(info)
     requests.addInfo(info)
+    $scope.brand = ''
+    $scope.url = ''
+    $scope.amazonUser = ''
+
   }
 
   $scope.logout = function(){
